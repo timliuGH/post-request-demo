@@ -11,6 +11,14 @@ app.get('/', function(req, res) {
     res.render('home');
 });
 
+app.get('/friends', function(req, res) {
+    var friends = ['Luffy', 'Zoro', 'Nami', 'Usopp', 'Sanji', 'Chopper', 'Robin', 'Franky'];
+    res.render('friends', {friends: friends});
+});
+
+app.post('/addFriend', function(req, res) {
+    res.send('You have reached the post route');
+});
 
 app.listen(port, ip, function() {
     console.log(`Now serving on ${port}`);
